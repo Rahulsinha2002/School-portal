@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission & Vision | Aryavart Academy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #007bff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      color: white;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    /* Wave Divider */
+    .wave-divider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(200% + 1.3px);
+      height: 100px;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .overlay-text {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+
+    .Topbar {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+}
+
+.scrolling-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 28px;
+}
+
+.scrolling-text {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 30s linear infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.topbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-link i {
+  font-size: 1.2rem;
+}
+
+/* Responsive layout for phones */
+@media (max-width: 768px) {
+  .topbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .scrolling-text {
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    font-size: 0.95rem;
+  }
+}
+nav {
+  background-color: #00000013;
+  color: teal;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 10px;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.nav-links a:hover {
+  background-color: #00000013;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfafa;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  font-weight: 450;
+  font-size: 1.3rem;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+}
+
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger Style */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Responsive Style */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: #3b4b5c76;
+    width: 100%;
+  }
+
+  .nav-item:hover .dropdown-content {
+    display: none;
+  }
+
+  .nav-item.open .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <!-- TopBar -->
+  <div class="Topbar">
+    <div class="scrolling-wrapper">
+      <p class="scrolling-text">🎓 Education is the key to success. | 📚 Learn Today, Lead Tomorrow. | 🏫 Aryavart Academy Welcomes You!</p>
+    </div>
+
+    <div class="topbar-right">
+      <div class="number">
+        <a href="http://localhost/SCHOOOLFORM/" target="_blank" class="contact-link">
+          <i class="fas fa-user-graduate"></i><span>Admission-Open</span>
+        </a>
+      </div>
+
+      <div class="number">
+        <a href="mailto:school@example.com" target="_blank" class="contact-link">
+          <i class="fas fa-envelope"></i><span>Mail-Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Aryavart Academy</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <div class="nav-item">
+        <a href="index.html">Home</a>
+      </div>
+
+      <div class="nav-item">
+        <a  onclick="toggleDropdown(event, 0)">About Us ▼</a>
+        <div class="dropdown-content">
+          <a href="mission.html">Mission</a>
+          <a href="staff.html">Faculty</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#" onclick="toggleDropdown(event, 1)">Achievement ▼</a>
+        <div class="dropdown-content">
+          <a href="awards.html">Awards</a>
+          <a href="results.html">Results</a>
+          <a href="necessary.html">Necessary</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#" onclick="toggleDropdown(event, 2)">Schooling ▼</a>
+        <div class="dropdown-content">
+          <a href="primary.html">Primary</a>
+          <a href="secondary.html">Secondary</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a  onclick="toggleDropdown(event, 3)">Contact ▼</a>
+        <div class="dropdown-content">
+          <a href="Supportcontact.html">Support</a>
+          <a href="map.html">Map</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Banner Slideshow -->
+  <div class="slideshow-container">
+    <img class="slides" src="assest/pexels-pixabay-235985.jpg" alt="Slide 1">
+    <img class="slides" src="assest/pexels-pixabay-235992.jpg" alt="Slide 2">
+    <img class="slides" src="assest/Main.jpg" alt="Slide 3">
+    <div class="overlay-text">Our Mission & Vision</div>
+  </div>
+
+  <!-- SVG Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#007bff"></path>
+    </svg>
+  </div>
+
+  <!-- Mission Section -->
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      At Aryavart Academy, our mission is to nurture a dynamic educational environment where students are inspired to explore, innovate, and excel. 
+      We empower young minds through holistic development, focusing on academic excellence, character building, and social responsibility.
+    </p>
+  </section>
+
+  <!-- SVG Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path d="M0,100 C300,0 900,100 1200,0 L1200,100 L0,100 Z" fill="#f9f9f9"></path>
+    </svg>
+  </div>
+
+  <!-- Vision Section -->
+  <section id="vision">
+    <h2>Our Vision</h2>
+    <p>
+      Our vision is to become a center of excellence in education, recognized for fostering creativity, curiosity, and lifelong learning. 
+      We aim to cultivate global citizens equipped with the skills, knowledge, and values necessary to thrive in an ever-changing world.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Aryavart Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- JS for Slideshow -->
+  <script>
+    let slideIndex = 0;
+    const showSlides = () => {
+      const slides = document.querySelectorAll(".slides");
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000); // Change slide every 4 seconds
+    }
+    showSlides();
+  </script>
+<script src="script.js"></script>
+
+</body>
+</html>
